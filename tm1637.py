@@ -190,10 +190,10 @@ class TM1637(object):
         h0, h1 = divmod(time.hour, 10)
         m0, m1 = divmod(time.minute, 10)
         self.write([
-            tm.encode_digit(h0) if leadingZero or h0 != 0 else 0,
-            tm.encode_digit(h1) | 0x80 if colon else tm.encode_digit(h1),
-            tm.encode_digit(m0),
-            tm.encode_digit(m1)])
+            self.encode_digit(h0) if leadingZero or h0 != 0 else 0,
+            self.encode_digit(h1) | 0x80 if colon else self.encode_digit(h1),
+            self.encode_digit(m0),
+            self.encode_digit(m1)])
 
     def temperature(self, num):
         if num < -9:
