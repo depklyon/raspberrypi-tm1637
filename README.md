@@ -158,7 +158,7 @@ numbers(num1, num2, colon=True)
 
 Display time with colon, without leading zero in the hour value.
 ```python
-t=datetime.datetime.now().time()
+t = datetime.datetime.now().time()
 time(t, colon=True, leadingZero=False)
 ```
 
