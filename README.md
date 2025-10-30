@@ -159,7 +159,7 @@ numbers(num1, num2, colon=True)
 Display time with colon, without leading zero in the hour value.
 ```python
 t = datetime.datetime.now().time()
-time(t, colon=True, leadingZero=False)
+time(t, colon=True, leading_zero=False)
 ```
 
 Display a temperature -9 through 99 followed by degrees C.

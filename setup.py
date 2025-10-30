@@ -12,7 +12,7 @@ with open("README.md", "r") as fh:
 setup(
     name='raspberrypi-tm1637',
     py_modules=['tm1637'],
-    version='1.3.7',
+    version='1.3.8',
     description='Raspberry Pi Python port from MicroPython library for TM1637 LED driver.',
     long_description=long_description,
     long_description_content_type="text/markdown",
