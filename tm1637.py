@@ -186,6 +186,15 @@ class TM1637(object):
             segments[1] |= 0x80  # colon on
         self.write(segments)
 
+    def time(self, time, colon=True, leading_zero=False):
+        h0, h1 = divmod(time.hour, 10)
+        m0, m1 = divmod(time.minute, 10)
+        self.write([
+            self.encode_digit(h0) if leading_zero or h0 != 0 else 0,
+            self.encode_digit(h1) | 0x80 if colon else self.encode_digit(h1),
+            self.encode_digit(m0),
+            self.encode_digit(m1)])
+
     def temperature(self, num):
         if num < -9:
             self.show('lo')  # low

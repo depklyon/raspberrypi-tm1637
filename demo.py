@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 # Raspberry Pi Python 3 TM1637 quad 7-segment LED display driver examples
+from datetime import datetime
 from time import sleep
 
 import tm1637
@@ -244,6 +245,11 @@ sleep(DELAY)
 
 # show "12:59"
 tm.numbers(12, 59)
+sleep(DELAY)
+
+# show "8:08"
+demo_time = datetime(2025, 1, 1, 8, 8)
+tm.time(demo_time, colon=True)
 sleep(DELAY)
 
 # show temperature '24*C'
